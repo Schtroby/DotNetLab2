@@ -93,7 +93,7 @@ namespace LabII.Controllers
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
-            var existing = context.Expenses.FirstOrDefault(expense => expense.Id == id);
+            var existing = context.Expenses.Include(d => d.Comments).FirstOrDefault(expense => expense.Id == id);
             if (existing == null)
             {
                 return NotFound();
