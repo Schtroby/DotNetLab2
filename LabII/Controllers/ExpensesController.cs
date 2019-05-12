@@ -23,7 +23,7 @@ namespace LabII.Controllers
         [HttpGet]
         public IEnumerable<Expense> Get([FromQuery]DateTime? from, [FromQuery]DateTime? to)
         {
-            IQueryable<Expense> result = context.Expenses;
+            IQueryable<Expense> result = context.Expenses.Include(x => x.Comments);
             if (from == null && to == null)
             {
                 return result;
