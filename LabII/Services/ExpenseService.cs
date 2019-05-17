@@ -41,7 +41,7 @@ namespace LabII.Services
 
         public Expense Delete(int id)
         {
-            var existing = context.Expenses.FirstOrDefault(expense => expense.Id == id);
+            var existing = context.Expenses.Include(x => x.Comments).FirstOrDefault(expense => expense.Id == id);
             if (existing == null)
             {
                 return null;
