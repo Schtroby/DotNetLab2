@@ -36,6 +36,6 @@ namespace LabII.Models
         public double Sum { get; set; }
 
         public List<Comment> Comments { get; set; }
-
+        
     }
 }
