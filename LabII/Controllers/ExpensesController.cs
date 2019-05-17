@@ -19,7 +19,13 @@ namespace LabII.Controllers
         {
             this.expenseService = expenseService;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="from"></param>
+        /// <param name="to"></param>
+        /// <param name="type"></param>
+        /// <returns></returns>
         // GET: api/Expenses
         [HttpGet]
         public IEnumerable<Expense> Get([FromQuery]DateTime? from, [FromQuery]DateTime? to, [FromQuery]Models.Type? type)
