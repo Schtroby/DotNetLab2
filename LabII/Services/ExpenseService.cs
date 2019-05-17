@@ -76,7 +76,7 @@ namespace LabII.Services
 
         public Expense GetById(int id)
         {
-            return context.Expenses.FirstOrDefault(e => e.Id == id);
+            return context.Expenses.Include(x => x.Comments).FirstOrDefault(e => e.Id == id);
         }
 
         public Expense Upsert(int id, Expense expense)
