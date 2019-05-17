@@ -10,7 +10,7 @@ namespace LabII.Services
     public interface IExpenseService
     {
 
-        IEnumerable<Expense> GetAll(DateTime? from=null, DateTime? to=null, Models.Type? type =null);
+        IEnumerable<Expense> GetAll(DateTime? from=null, DateTime? to=null, Models.Type? type=null);
 
         Expense GetById(int id);
 
