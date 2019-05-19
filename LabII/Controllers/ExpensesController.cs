@@ -105,7 +105,7 @@ namespace LabII.Controllers
         /// </summary>
         /// <param name="expense"></param>
         [ProducesResponseType(StatusCodes.Status201Created)]
-        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         // POST: api/Expenses
         [HttpPost]
         public void Post([FromBody] Expense expense)
@@ -157,7 +157,7 @@ namespace LabII.Controllers
         /// <param name="id">ID</param>
         /// <returns>The deleted item or not found</returns>
         [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         // DELETE: api/ApiWithActions/5
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
