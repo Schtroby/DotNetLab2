@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using LabII.DTOs;
 using LabII.Models;
 using LabII.Services;
 using Microsoft.AspNetCore.Http;
@@ -53,9 +54,10 @@ namespace LabII.Controllers
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         // GET: api/Expenses
         [HttpGet]
-        public IEnumerable<Expense> Get([FromQuery]DateTime? from, [FromQuery]DateTime? to, [FromQuery]Models.Type? type)
+        public PaginatedList<ExpenseGetDTO> Get([FromQuery]DateTime? from, [FromQuery]DateTime? to, [FromQuery]Models.Type? type, [FromQuery]int page = 1)
         {
-            return expenseService.GetAll(from, to, type);
+            page = Math.Max(page, 1);
+            return expenseService.GetAll(page, from, to, type);
         }
 
         ///<remarks>
@@ -108,7 +110,7 @@ namespace LabII.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         // POST: api/Expenses
         [HttpPost]
-        public void Post([FromBody] Expense expense)
+        public void Post([FromBody] ExpensePostDTO expense)
         {
             expenseService.Create(expense);
         }
