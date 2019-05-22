@@ -113,6 +113,8 @@ namespace LabII
                 app.UseHsts();
             }
 
+            app.UseAuthentication();
+
             app.UseHttpsRedirection();
             app.UseMvc();
 
