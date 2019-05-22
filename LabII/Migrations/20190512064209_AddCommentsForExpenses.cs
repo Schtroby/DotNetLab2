@@ -6,23 +6,23 @@ namespace LabII.Migrations
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.AddColumn<int>(
-                name: "ExpenseId",
-                table: "Comments",
-                nullable: true);
+            //migrationBuilder.AddColumn<int>(
+            //    name: "ExpenseId",
+            //    table: "Comments",
+            //    nullable: true);
 
-            migrationBuilder.CreateIndex(
-                name: "IX_Comments_ExpenseId",
-                table: "Comments",
-                column: "ExpenseId");
+            //migrationBuilder.CreateIndex(
+            //    name: "IX_Comments_ExpenseId",
+            //    table: "Comments",
+            //    column: "ExpenseId");
 
-            migrationBuilder.AddForeignKey(
-                name: "FK_Comments_Expenses_ExpenseId",
-                table: "Comments",
-                column: "ExpenseId",
-                principalTable: "Expenses",
-                principalColumn: "Id",
-                onDelete: ReferentialAction.Restrict);
+            //migrationBuilder.AddForeignKey(
+            //    name: "FK_Comments_Expenses_ExpenseId",
+            //    table: "Comments",
+            //    column: "ExpenseId",
+            //    principalTable: "Expenses",
+            //    principalColumn: "Id",
+            //    onDelete: ReferentialAction.Restrict);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
